@@ -12,7 +12,7 @@ import ImageModal from "./components/ImageModal/ImageModal";
 
 function App() {
   const [images, setImages] = useState([]);
-  const [query, setQuery] = useState(null);
+  const [query, setQuery] = useState("dog");
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -51,14 +51,13 @@ function App() {
     setPage(page + 1);
   };
 
-  const handleSearch = (query) => {
-    console.log(query);
-    if (query.trim() === query) {
+  const handleSearch = (newQuery) => {
+    if (newQuery.trim() === query) {
       setPage(page + 1);
     } else {
       setImages([]);
       setPage(1);
-      setQuery(query.trim());
+      setQuery(newQuery.trim());
     }
   };
 
