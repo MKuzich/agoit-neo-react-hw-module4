@@ -1,0 +1,15 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  padding: 100px 16px 16px 16px;
+  box-sizing: border-box;
+}
+
+.error {
+  font-size: 36px;
+  color: #f44336;
+  text-align: center;
+}
