@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import css from "./ImageModal.module.css";
+import Modal from "react-modal";
 
 const ImageModal = ({
   closeModal,
@@ -31,11 +32,16 @@ const ImageModal = ({
     }
   };
   return (
-    <div className={css.backdrop} onClick={onBackprodClick}>
-      <div className={css.modal}>
-        <img src={regular} alt={alt_description} className={css.image} />
-      </div>
-    </div>
+    <Modal
+      isOpen={true}
+      onRequestClose={closeModal}
+      className={css.modal}
+      overlayClassName={css.backdrop}
+      onClick={onBackprodClick}
+      ariaHideApp={false}
+    >
+      <img src={regular} alt={alt_description} className={css.image} />
+    </Modal>
   );
 };
 
